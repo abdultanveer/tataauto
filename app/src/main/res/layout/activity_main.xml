@@ -23,7 +23,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="37dp"
         android:ems="10"
-        android:hint="enter name"
+        android:hint="@string/enter_name"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +35,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="126dp"
         android:ems="10"
-        android:hint="enter password"
+        android:hint="@string/enter_password"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="29dp"
-        android:text="remember password"
+        android:text="@string/remember_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPwd" />
 

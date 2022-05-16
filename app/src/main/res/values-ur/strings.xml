@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_name">اپنا نام درج کریں</string>
+    <string name="enter_password">آپ کا پاس ورڈ</string>
+    <string name="remember_password">کیا مجھے پاس ورڈ یاد ہے؟</string>
+</resources>

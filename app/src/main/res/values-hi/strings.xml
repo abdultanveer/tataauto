@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="enter_name">अपना नाम दर्ज करें</string>
+    <string name="enter_password">आपका पासवर्ड</string>
+    <string name="remember_password">क्या मुझे पासवर्ड याद है</string>
+</resources>
