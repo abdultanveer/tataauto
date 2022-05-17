@@ -4,7 +4,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,17 +32,35 @@ public class MainActivity extends AppCompatActivity {
                 startHome();
                 break;
             case R.id.btnDial:
-                Intent dialIntent = new Intent(Intent.ACTION_DIAL);
-                startActivity(dialIntent);
+                startDialer();
+                break;
+            case R.id.btnAlarm:
+                createAlarm("tata",12,21); //arguments
                 break;
         }
 
     }
 
+    //    public void createAlarm(String message, int hour, int minutes) -- method signature
+    public void createAlarm(String message, int hour, int minutes) { //params
+        Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM)
+                .putExtra(AlarmClock.EXTRA_MESSAGE, message)
+                .putExtra(AlarmClock.EXTRA_HOUR, hour)
+                .putExtra(AlarmClock.EXTRA_MINUTES, minutes);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
+    private void startDialer() {
+        Intent dialIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:9880979732"));  //implicit intent
+        startActivity(dialIntent);
+    }
+
     private void startHome() {
         String name = nameEditText.getText().toString();
         //intent = box, this box has a partition called extras-- in that partition i'll keep the name
-        Intent hIntent = new Intent(MainActivity.this, HomeActivity.class);
+        Intent hIntent = new Intent(MainActivity.this, HomeActivity.class); //explicit intent
         hIntent.putExtra("labelkey", name);
         startActivityForResult(hIntent,123);
         //request code will identify what kind of data is being returned

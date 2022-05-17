@@ -78,9 +78,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"
-        android:text="dial"
         android:onClick="handleClick"
+        android:text="dial"
         app:layout_constraintBottom_toTopOf="@+id/tvMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnAlarm"
+        android:onClick="handleClick"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="alarm"
+        tools:layout_editor_absoluteX="286dp"
+        tools:layout_editor_absoluteY="270dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
