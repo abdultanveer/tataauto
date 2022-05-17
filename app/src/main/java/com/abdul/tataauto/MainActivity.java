@@ -1,5 +1,6 @@
 package com.abdul.tataauto;
 
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -55,11 +56,18 @@ public class MainActivity extends AppCompatActivity {
     private void startDialer() {
         int a = 10;
         int b = 20;
+       int d = add(a,b);
         int c = a+b;
         throw new NullPointerException("from startdialer");
         /*Intent dialIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:9880979732"));  //implicit intent
         startActivity(dialIntent);*/
     }
+
+    private int add(int a, int b) {
+        int f = 45;
+        return a+b;
+    }
+
 
     private void startHome() {
         String name = nameEditText.getText().toString();
