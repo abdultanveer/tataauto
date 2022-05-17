@@ -2,12 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/elxsi_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/elxsi_bg"
     tools:context=".MainActivity">
 
-<!--
+    <!--
     from your project
     android:background="@color/elxsi_bg"
     android:background="#abc345"
@@ -41,19 +41,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:background="@color/black"
-        android:textColor="@color/white"
         android:id="@+id/checkBoxRememPwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="29dp"
+        android:background="@color/black"
         android:text="@string/remember_password"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPwd" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnSubmit"
         android:layout_width="@dimen/btn_submit_width"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -68,8 +68,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textSize="@dimen/textsize_elxsi"
         android:text="Welcome to automotive in android"
+        android:textSize="@dimen/textsize_elxsi"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button" />
+        app:layout_constraintTop_toBottomOf="@id/btnSubmit" />
+
+    <Button
+        android:id="@+id/btnDial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:text="dial"
+        android:onClick="handleClick"
+        app:layout_constraintBottom_toTopOf="@+id/tvMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

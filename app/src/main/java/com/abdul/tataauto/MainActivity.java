@@ -24,7 +24,20 @@ public class MainActivity extends AppCompatActivity {
     }
     //indent
 
-    public void handleClick(View view) {
+    public void handleClick(View viewClicked) {
+        switch (viewClicked.getId()){
+            case R.id.btnSubmit:
+                startHome();
+                break;
+            case R.id.btnDial:
+                Intent dialIntent = new Intent(Intent.ACTION_DIAL);
+                startActivity(dialIntent);
+                break;
+        }
+
+    }
+
+    private void startHome() {
         String name = nameEditText.getText().toString();
         //intent = box, this box has a partition called extras-- in that partition i'll keep the name
         Intent hIntent = new Intent(MainActivity.this, HomeActivity.class);
