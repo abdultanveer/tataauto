@@ -22,11 +22,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void handleClick(View view) {
+        String name = nameEditText.getText().toString();
+        //intent = box, this box has a partition called extras-- in that partition i'll keep the name
         Intent hIntent = new Intent(MainActivity.this,HomeActivity.class);
+       hIntent.putExtra("labelkey",name);
         startActivity(hIntent);
 
-        String name = nameEditText.getText().toString();
 
-        Toast.makeText(this, name + "----welcome to automotive", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, name + "----welcome to automotive", Toast.LENGTH_SHORT).show();
     }
 }
