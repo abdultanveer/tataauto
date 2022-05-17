@@ -53,8 +53,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startDialer() {
-        Intent dialIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:9880979732"));  //implicit intent
-        startActivity(dialIntent);
+        int a = 10;
+        int b = 20;
+        int c = a+b;
+        throw new NullPointerException("from startdialer");
+        /*Intent dialIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:9880979732"));  //implicit intent
+        startActivity(dialIntent);*/
     }
 
     private void startHome() {
