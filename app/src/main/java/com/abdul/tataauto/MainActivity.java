@@ -1,5 +1,6 @@
 package com.abdul.tataauto;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,15 +22,28 @@ public class MainActivity extends AppCompatActivity {
         nameEditText = findViewById(R.id.etName); //initialization
 
     }
+    //indent
 
     public void handleClick(View view) {
         String name = nameEditText.getText().toString();
         //intent = box, this box has a partition called extras-- in that partition i'll keep the name
-        Intent hIntent = new Intent(MainActivity.this,HomeActivity.class);
-       hIntent.putExtra("labelkey",name);
-        startActivity(hIntent);
+        Intent hIntent = new Intent(MainActivity.this, HomeActivity.class);
+        hIntent.putExtra("labelkey", name);
+        startActivityForResult(hIntent,123);
+        //request code will identify what kind of data is being returned
 
+        // Toast.makeText(this, name + "----welcome to automotive", Toast.LENGTH_SHORT).show();
+    }
 
-       // Toast.makeText(this, name + "----welcome to automotive", Toast.LENGTH_SHORT).show();
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent receivedIntent) {
+        super.onActivityResult(requestCode, resultCode, receivedIntent);
+        if(requestCode == 123 && resultCode == RESULT_OK){
+            Bundle extrasBox = receivedIntent.getExtras();
+            String contactDetails = extrasBox.getString("conkey");
+            TextView mainTextView = findViewById(R.id.tvMain);
+            mainTextView.setText(contactDetails);
+
+        }
     }
 }

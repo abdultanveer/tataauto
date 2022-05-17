@@ -15,4 +15,27 @@
         android:text="Home Activity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="37dp"
+        android:ems="10"
+        android:hint="enter ph no"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHome" />
+
+    <Button
+        android:id="@+id/btnContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
+        android:onClick="clickHandler"
+        android:text="select contact"
+        app:layout_constraintStart_toStartOf="@+id/etContact"
+        app:layout_constraintTop_toBottomOf="@+id/etContact" />
 </androidx.constraintlayout.widget.ConstraintLayout>
