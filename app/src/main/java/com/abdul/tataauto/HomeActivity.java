@@ -104,4 +104,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnFocusChang
     public void onClick(View view) {
         Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show();
     }
+
+    public void fabClickHandler(View view) {
+        Toast.makeText(this, "fab was clicked", Toast.LENGTH_SHORT).show();
+    }
 }
