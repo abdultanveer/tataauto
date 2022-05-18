@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,8 +14,9 @@ import android.widget.Toast;
 /**
  * this is the second activity
  */
-public class HomeActivity extends AppCompatActivity implements View.OnFocusChangeListener {
+public class HomeActivity extends AppCompatActivity implements View.OnFocusChangeListener, View.OnClickListener {
     EditText contactEditText;
+    Button contactButton; //declaration on stack memory -- table of content
     public static String TAG = HomeActivity.class.getSimpleName();
             //"HomeActivity"
     @Override
@@ -23,6 +25,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnFocusChang
         setContentView(R.layout.activity_home);
         Log.i(TAG,"onCreate");   //i = info
         contactEditText = findViewById(R.id.etContact);
+        contactButton = findViewById(R.id.btnContact); //initialization --- heap mem
+        contactButton.setOnClickListener(this);
         contactEditText.setOnFocusChangeListener(this);
 
         //getDataMainActivity();
@@ -94,5 +98,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnFocusChang
             Toast.makeText(this, "lost focus", Toast.LENGTH_SHORT).show();
 
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show();
     }
 }
