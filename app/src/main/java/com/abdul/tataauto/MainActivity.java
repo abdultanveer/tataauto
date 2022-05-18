@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
         nameEditText = findViewById(R.id.etName); //initialization
 
+        Student abdul; //declaration
+        abdul = new Student(); //initialization
+
     }
     //indent
 
@@ -63,12 +66,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(dialIntent);*/
     }
 
+    /**
+     * this method adds 2 nos
+     * @param a first num
+     * @param b second num
+     * @return
+     */
     private int add(int a, int b) {
         int f = 45;
         return a+b;
     }
 
 
+    /**
+     * this will start the home activity
+     */
     private void startHome() {
         String name = nameEditText.getText().toString();
         //intent = box, this box has a partition called extras-- in that partition i'll keep the name

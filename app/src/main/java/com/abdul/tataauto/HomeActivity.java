@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ * this is the second activity
+ */
 public class HomeActivity extends AppCompatActivity {
     EditText contactEditText;
     public static String TAG = HomeActivity.class.getSimpleName();
@@ -17,7 +20,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Log.i(TAG,"onCreate");
+        Log.i(TAG,"onCreate");   //i = info
         contactEditText = findViewById(R.id.etContact);
 
         Intent receivedIntentMA = getIntent();
@@ -30,25 +33,25 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG,"onstart");
+        Log.d(TAG,"onstart");  //debug
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.e(TAG,"onresume");
+        Log.e(TAG,"onresume"); //e=error
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.w(TAG,"onpause");
+        Log.w(TAG,"onpause"); //w=warnings
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.v(TAG,"onstop");
+        Log.v(TAG,"onstop");  //v=verbose
     }
 
     //purged
@@ -63,6 +66,8 @@ public class HomeActivity extends AppCompatActivity {
      * @param view
      */
     public void clickHandler(View view) {
+        Log.i(TAG,"clickHandler");   //i = info
+
         //get the contact data from edittext
         String contact = contactEditText.getText().toString();
         //put the data into the intent
