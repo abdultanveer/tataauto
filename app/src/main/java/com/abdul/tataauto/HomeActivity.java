@@ -6,15 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 /**
  * this is the second activity
  */
-public class HomeActivity extends AppCompatActivity implements View.OnFocusChangeListener, View.OnClickListener {
+public class HomeActivity extends AppCompatActivity
+        implements View.OnFocusChangeListener, View.OnClickListener,
+        AdapterView.OnItemSelectedListener {
+    Spinner cSpinner;
     EditText contactEditText;
     Button contactButton; //declaration on stack memory -- table of content
     public static String TAG = HomeActivity.class.getSimpleName();
@@ -24,8 +29,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnFocusChang
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Log.i(TAG,"onCreate");   //i = info
+        cSpinner = findViewById(R.id.countriesSspinner);
         contactEditText = findViewById(R.id.etContact);
         contactButton = findViewById(R.id.btnContact); //initialization --- heap mem
+        cSpinner.setOnItemSelectedListener(this);
         contactButton.setOnClickListener(this);
         contactEditText.setOnFocusChangeListener(this);
 
@@ -107,5 +114,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnFocusChang
 
     public void fabClickHandler(View view) {
         Toast.makeText(this, "fab was clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+        String cName = (String) adapterView.getItemAtPosition(position);
+        Toast.makeText(this, cName, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
