@@ -11,17 +11,17 @@
         android:theme="@style/Theme.Tataauto">
         <activity
             android:name=".HomeActivity"
-            android:exported="false" >
-
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" ></action>
 
                 <category android:name="android.intent.category.LAUNCHER" ></category>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
         </activity>
     </application>
 

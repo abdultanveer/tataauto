@@ -8,11 +8,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * this is the second activity
  */
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements View.OnFocusChangeListener {
     EditText contactEditText;
     public static String TAG = HomeActivity.class.getSimpleName();
             //"HomeActivity"
@@ -22,7 +23,12 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Log.i(TAG,"onCreate");   //i = info
         contactEditText = findViewById(R.id.etContact);
+        contactEditText.setOnFocusChangeListener(this);
 
+        //getDataMainActivity();
+    }
+
+    private void getDataMainActivity() {
         Intent receivedIntentMA = getIntent();
         Bundle extrasBox = receivedIntentMA.getExtras();
         String mName = extrasBox.getString("labelkey");
@@ -77,5 +83,16 @@ public class HomeActivity extends AppCompatActivity {
         setResult(RESULT_OK,contactIntent);
         //close this activity
         finish();
+    }
+
+    @Override
+    public void onFocusChange(View view, boolean isFocussed) {
+        if(isFocussed){
+            Toast.makeText(this, "received focus", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this, "lost focus", Toast.LENGTH_SHORT).show();
+
+        }
     }
 }

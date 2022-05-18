@@ -14,5 +14,9 @@ public class CalculatorTest extends TestCase {
         assertEquals(expected,actual);
     }
 
-
+    public  void testDivide(){
+        int expected = 5;
+        int actual = Calculator.divide(20,4);
+        assertEquals(expected,actual);
+    }
 }
