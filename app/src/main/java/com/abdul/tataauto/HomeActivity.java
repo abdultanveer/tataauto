@@ -32,8 +32,8 @@ public class HomeActivity extends AppCompatActivity
         cSpinner = findViewById(R.id.countriesSspinner);
         contactEditText = findViewById(R.id.etContact);
         contactButton = findViewById(R.id.btnContact); //initialization --- heap mem
-        cSpinner.setOnItemSelectedListener(this);
-        contactButton.setOnClickListener(this);
+        cSpinner.setOnItemSelectedListener(this); //this means object of homeActivity
+        contactButton.setOnClickListener(this); //it means when the button is clicked plz call the onclick of this class[homeActivity]
         contactEditText.setOnFocusChangeListener(this);
 
         //getDataMainActivity();
