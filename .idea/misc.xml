@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/flutterprojects/tataauto/app/src/main/res/drawable/gradient_box.xml" value="0.256" />
         <entry key="..\:/flutterprojects/tataauto/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2685" />
+        <entry key="..\:/flutterprojects/tataauto/app/src/main/res/drawable/layers.xml" value="0.2775" />
         <entry key="..\:/flutterprojects/tataauto/app/src/main/res/layout-land/activity_home.xml" value="0.2310405643738977" />
         <entry key="..\:/flutterprojects/tataauto/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/flutterprojects/tataauto/app/src/main/res/layout/activity_main.xml" value="0.22" />
