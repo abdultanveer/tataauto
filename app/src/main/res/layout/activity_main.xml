@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_box"
     tools:context=".MainActivity">
 
     <!--
@@ -91,6 +90,31 @@
         android:layout_height="wrap_content"
         android:onClick="handleClick"
         android:text="alarm"
-        tools:layout_editor_absoluteX="286dp"
-        tools:layout_editor_absoluteY="270dp" />
+        app:layout_constraintLeft_toRightOf="@id/btnDial"
+        app:layout_constraintBaseline_toBaselineOf="@id/btnDial"
+        android:layout_marginLeft="20dp"
+        />
+
+    <!--<androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swOnOff"
+        android:layout_width="200dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        app:showText="true"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tvMain"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:track="@drawable/custom_track"
+        android:thumb="@drawable/custom_thumb"
+        android:layout_height="120dp"/>-->
+    <CheckBox
+        android:layout_width="1065dp"
+        android:layout_height="329dp"
+        android:button="@drawable/checkbox_selector"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMain" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
