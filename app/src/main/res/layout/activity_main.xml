@@ -95,12 +95,12 @@
         app:layout_constraintLeft_toRightOf="@id/btnDial" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvContextMenu"
         style="@style/elxsiText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="TextView"
+        android:text="long click me"
         app:layout_constraintTop_toBottomOf="@id/tvMain"
         app:layout_constraintLeft_toLeftOf="parent"
          />

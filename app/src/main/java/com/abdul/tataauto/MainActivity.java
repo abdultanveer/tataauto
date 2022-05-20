@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.AlarmClock;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText nameEditText; //declaration
+    TextView cmiTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);//inflation -- read the xml and create its memory variables[boxes]
 
         nameEditText = findViewById(R.id.etName); //initialization
+        cmiTextView = findViewById(R.id.tvContextMenu);
+        registerForContextMenu(cmiTextView);
 
         Student abdul; //declaration
         abdul = new Student(); //initialization
@@ -34,6 +38,31 @@ public class MainActivity extends AppCompatActivity {
     }
     //indent
 
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.context_main_menu,menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+         super.onContextItemSelected(item);
+         switch (item.getItemId()){
+             case R.id.cmi_copy:
+                 Toast.makeText(this, "copied", Toast.LENGTH_SHORT).show();
+                 break;
+             case R.id.cmi_cut:
+                 Toast.makeText(this, "cutting", Toast.LENGTH_SHORT).show();
+
+                 break;
+             case R.id.cmi_paste:
+                 Toast.makeText(this, "pasting", Toast.LENGTH_SHORT).show();
+
+                 break;
+         }
+        return true;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
