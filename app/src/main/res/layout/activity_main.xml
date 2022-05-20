@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Welcome to automotive in android"
-        android:textSize="@dimen/textsize_elxsi"
+       style="@style/elxsiText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnSubmit" />
 
@@ -88,12 +88,22 @@
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:onClick="handleClick"
         android:text="alarm"
-        app:layout_constraintLeft_toRightOf="@id/btnDial"
         app:layout_constraintBaseline_toBaselineOf="@id/btnDial"
-        android:layout_marginLeft="20dp"
-        />
+        app:layout_constraintLeft_toRightOf="@id/btnDial" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/elxsiText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="TextView"
+        app:layout_constraintTop_toBottomOf="@id/tvMain"
+        app:layout_constraintLeft_toLeftOf="parent"
+         />
 
     <!--<androidx.appcompat.widget.SwitchCompat
         android:id="@+id/swOnOff"
@@ -109,12 +119,12 @@
         app:track="@drawable/custom_track"
         android:thumb="@drawable/custom_thumb"
         android:layout_height="120dp"/>-->
-    <CheckBox
+    <!-- <CheckBox
         android:layout_width="1065dp"
         android:layout_height="329dp"
         android:button="@drawable/checkbox_selector"
 
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvMain" />
+        app:layout_constraintTop_toBottomOf="@id/tvMain" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
