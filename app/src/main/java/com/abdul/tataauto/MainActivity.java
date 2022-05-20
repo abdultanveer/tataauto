@@ -1,6 +1,7 @@
 package com.abdul.tataauto;
 
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +9,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.AlarmClock;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);//inflation
+        setContentView(R.layout.activity_main);//inflation -- read the xml and create its memory variables[boxes]
 
         nameEditText = findViewById(R.id.etName); //initialization
 
@@ -29,6 +33,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
     //indent
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+         super.onCreateOptionsMenu(menu);
+        MenuInflater myMenuInflater = getMenuInflater();
+        myMenuInflater.inflate(R.menu.main_menu,menu);
+         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+         super.onOptionsItemSelected(item);
+         switch (item.getItemId()){
+             case R.id.mi_logout:
+                 Toast.makeText(this, "logging out", Toast.LENGTH_SHORT).show();
+                 break;
+             case R.id.mi_settings:
+                 Toast.makeText(this, "opening settings", Toast.LENGTH_SHORT).show();
+                 break;
+         }
+        return true;
+    }
 
     public void handleClick(View viewClicked) {
         switch (viewClicked.getId()){
